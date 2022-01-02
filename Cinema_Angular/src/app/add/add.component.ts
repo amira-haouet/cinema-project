@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { ApiService } from '../api.service';
 import { FormGroup, FormControl, FormBuilder, Validators } from '@angular/forms'
 import { Router } from '@angular/router';
+import { CinemaService } from '../services/cinema.service';
 
 
 @Component({
@@ -12,7 +12,7 @@ import { Router } from '@angular/router';
 export class AddComponent implements OnInit {
 
   addForm: FormGroup;
-  constructor(private _apiService: ApiService, private formBuilder: FormBuilder, private router: Router) {
+  constructor(private _apiService: CinemaService, private formBuilder: FormBuilder, private router: Router) {
     this.addForm = formBuilder.group(
       {
         titre: new FormControl(null, [

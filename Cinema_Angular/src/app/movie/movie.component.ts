@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { ApiService } from '../api.service';
+
 import { FormGroup, FormControl, FormBuilder } from '@angular/forms'
+import { CinemaService } from '../services/cinema.service';
 @Component({
   selector: 'app-medecin',
   templateUrl: './movie.component.html',
@@ -8,7 +9,7 @@ import { FormGroup, FormControl, FormBuilder } from '@angular/forms'
 })
 export class MovieComponent implements OnInit {
   seachForm: FormGroup;
-  constructor(private _apiService: ApiService, private formBuilder: FormBuilder) {
+  constructor(private _apiService: CinemaService, private formBuilder: FormBuilder) {
     this.seachForm = formBuilder.group(
       {
         sc: new FormControl()

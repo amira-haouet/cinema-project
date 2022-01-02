@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { ApiService } from '../api.service';
 import { FormGroup, FormControl, Validators, FormBuilder } from '@angular/forms'
 import { ActivatedRoute, ParamMap, Router } from '@angular/router';
+import { CinemaService } from '../services/cinema.service';
 
 @Component({
   selector: 'app-edit-spec',
@@ -13,7 +13,7 @@ export class EditSpecComponent implements OnInit {
 
 
   constructor(
-    private _apiService: ApiService,
+    private _apiService: CinemaService,
     private formBuilder: FormBuilder,
     private router: Router,
     private Aroute: ActivatedRoute) {

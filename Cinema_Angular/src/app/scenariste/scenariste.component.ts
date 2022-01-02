@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ApiService } from '../api.service';
+import { CinemaService } from '../services/cinema.service';
 @Component({
   selector: 'app-scenariste',
   templateUrl: './scenariste.component.html',
@@ -7,7 +7,7 @@ import { ApiService } from '../api.service';
 })
 export class ScenaristeComponent implements OnInit {
 
-  constructor(private _apiService: ApiService) { }
+  constructor(private _apiService: CinemaService) { }
 
 
   ngOnInit(): void {

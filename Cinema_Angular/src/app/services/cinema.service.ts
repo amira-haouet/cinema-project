@@ -7,7 +7,7 @@ import { Observable } from 'rxjs';
 })
 export class CinemaService {
 
-  public host: string = "http://localhost:9090";
+  public host: string = "http://localhost:8000";
 
   constructor(private http: HttpClient) { }
 
