@@ -85,6 +85,9 @@ public class Cinema  {
 	public void setVille(Ville ville) {
 		this.ville = ville;
 	}
+	public Cinema() {
+		super();
+	}
 	
 	
 }

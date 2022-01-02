@@ -20,5 +20,25 @@ public class Seance {
 	private Long id;
 	@Temporal(TemporalType.TIME)
 	private Date heureDebut;
+	public Seance(Long id, Date heureDebut) {
+		super();
+		this.id = id;
+		this.heureDebut = heureDebut;
+	}
+	public Seance() {
+		super();
+	}
+	public Long getId() {
+		return id;
+	}
+	public void setId(Long id) {
+		this.id = id;
+	}
+	public Date getHeureDebut() {
+		return heureDebut;
+	}
+	public void setHeureDebut(Date heureDebut) {
+		this.heureDebut = heureDebut;
+	}
 																													
 }
