@@ -140,7 +140,7 @@ public class CinemaInitServiceImpl implements ICinemaInitService {
 					Film film = new Film();
 					film.setTitre(titreFilm);
 					film.setDuree(durees[new Random().nextInt(durees.length)]);
-					film.setPhoto(titreFilm.replaceAll(" ", "")+".jpg");
+					film.setPhoto(titreFilm.replaceAll(" ", "") + ".jpg");
 					film.setCategorie(categories.get(new Random().nextInt(categories.size())));
 					filmRepository.save(film);
 				});
@@ -150,23 +150,23 @@ public class CinemaInitServiceImpl implements ICinemaInitService {
 	@Override
 	public void initProjections() {
 		double[] prices = new double[] { 30, 50, 60, 70, 90, 100 };
-		List<Film> films=filmRepository.findAll();
+		List<Film> films = filmRepository.findAll();
 		villeRepository.findAll().forEach(ville -> {
 			ville.getCinemas().forEach(cinema -> {
 				cinema.getSalles().forEach(salle -> {
-					int index=new Random().nextInt(films.size());
-					//filmRepository.findAll().forEach(film -> {
-					Film film=films.get(index);
-						seanceRepository.findAll().forEach(seance -> {
-							Projection projection = new Projection();
-							projection.setDateProjection(new Date());
-							projection.setFilm(film);
-							projection.setPrix(prices[new Random().nextInt(prices.length)]);
-							projection.setSalle(salle);
-							projection.setSeance(seance);
-							projectionRepository.save(projection);
-						});
-					//});
+					int index = new Random().nextInt(films.size());
+					// filmRepository.findAll().forEach(film -> {
+					Film film = films.get(index);
+					seanceRepository.findAll().forEach(seance -> {
+						Projection projection = new Projection();
+						projection.setDateProjection(new Date());
+						projection.setFilm(film);
+						projection.setPrix(prices[new Random().nextInt(prices.length)]);
+						projection.setSalle(salle);
+						projection.setSeance(seance);
+						projectionRepository.save(projection);
+					});
+					// });
 
 				});
 			});

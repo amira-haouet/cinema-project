@@ -72,5 +72,27 @@ public class CinemaRestController {
 	static class TicketForm {
 		private String nomClient;
 		private List<Long> tickets = new ArrayList<>();
+		public TicketForm(String nomClient, List<Long> tickets) {
+			super();
+			this.nomClient = nomClient;
+			this.tickets = tickets;
+		}
+		public TicketForm() {
+			super();
+		}
+		public String getNomClient() {
+			return nomClient;
+		}
+		public void setNomClient(String nomClient) {
+			this.nomClient = nomClient;
+		}
+		public List<Long> getTickets() {
+			return tickets;
+		}
+		public void setTickets(List<Long> tickets) {
+			this.tickets = tickets;
+		}
+		
+		
 	}
 }

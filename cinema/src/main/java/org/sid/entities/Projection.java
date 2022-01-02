@@ -33,4 +33,62 @@ public class Projection {
 	@ManyToOne
 	@JsonProperty(access = Access.WRITE_ONLY)
 	private Salle salle;
+	public Projection(Long id, Date dateProjection, double prix, Film film, Collection<Ticket> tickets, Seance seance,
+			Salle salle) {
+		super();
+		this.id = id;
+		this.dateProjection = dateProjection;
+		this.prix = prix;
+		this.film = film;
+		this.tickets = tickets;
+		this.seance = seance;
+		this.salle = salle;
+	}
+	public Long getId() {
+		return id;
+	}
+	public void setId(Long id) {
+		this.id = id;
+	}
+	public Date getDateProjection() {
+		return dateProjection;
+	}
+	public void setDateProjection(Date dateProjection) {
+		this.dateProjection = dateProjection;
+	}
+	public double getPrix() {
+		return prix;
+	}
+	public void setPrix(double prix) {
+		this.prix = prix;
+	}
+	public Film getFilm() {
+		return film;
+	}
+	public void setFilm(Film film) {
+		this.film = film;
+	}
+	public Collection<Ticket> getTickets() {
+		return tickets;
+	}
+	public void setTickets(Collection<Ticket> tickets) {
+		this.tickets = tickets;
+	}
+	public Seance getSeance() {
+		return seance;
+	}
+	public void setSeance(Seance seance) {
+		this.seance = seance;
+	}
+	public Salle getSalle() {
+		return salle;
+	}
+	public void setSalle(Salle salle) {
+		this.salle = salle;
+	}
+	public Projection() {
+		super();
+	}
+	
+	
 }

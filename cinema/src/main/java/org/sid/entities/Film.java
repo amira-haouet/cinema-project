@@ -29,6 +29,76 @@ public class Film {
 	@JsonProperty(access=Access.WRITE_ONLY)
 	private Collection<Projection> projections;
 	@ManyToOne
-	private Categorie categorie;	
+	private Categorie categorie;
+	public Film(Long id, String titre, double duree, String realisateur, String description, String photo,
+			Date dateSortie, Collection<Projection> projections, Categorie categorie) {
+		super();
+		this.id = id;
+		this.titre = titre;
+		this.duree = duree;
+		this.realisateur = realisateur;
+		this.description = description;
+		this.photo = photo;
+		this.dateSortie = dateSortie;
+		this.projections = projections;
+		this.categorie = categorie;
+	}
+	public Film() {
+		super();
+	}
+	public Long getId() {
+		return id;
+	}
+	public void setId(Long id) {
+		this.id = id;
+	}
+	public String getTitre() {
+		return titre;
+	}
+	public void setTitre(String titre) {
+		this.titre = titre;
+	}
+	public double getDuree() {
+		return duree;
+	}
+	public void setDuree(double duree) {
+		this.duree = duree;
+	}
+	public String getRealisateur() {
+		return realisateur;
+	}
+	public void setRealisateur(String realisateur) {
+		this.realisateur = realisateur;
+	}
+	public String getDescription() {
+		return description;
+	}
+	public void setDescription(String description) {
+		this.description = description;
+	}
+	public String getPhoto() {
+		return photo;
+	}
+	public void setPhoto(String photo) {
+		this.photo = photo;
+	}
+	public Date getDateSortie() {
+		return dateSortie;
+	}
+	public void setDateSortie(Date dateSortie) {
+		this.dateSortie = dateSortie;
+	}
+	public Collection<Projection> getProjections() {
+		return projections;
+	}
+	public void setProjections(Collection<Projection> projections) {
+		this.projections = projections;
+	}
+	public Categorie getCategorie() {
+		return categorie;
+	}
+	public void setCategorie(Categorie categorie) {
+		this.categorie = categorie;
+	}	
 	
 }
