@@ -1,8 +1,7 @@
-package org.sid.dao;
+package org.sid.entities;
 
 import java.util.List;
 
-import org.sid.entities.Movie;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 

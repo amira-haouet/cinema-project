@@ -1,9 +1,10 @@
 package org.sid.web;
 
-package com.example.demo.api;
 
 import java.util.List;
 
+import org.sid.entities.Movie;
+import org.sid.services.MovieService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.web.bind.annotation.CrossOrigin;
@@ -15,8 +16,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.example.demo.entities.Movie;
-import com.example.demo.service.MovieService;
+
 
 @RestController
 @RequestMapping("/movie/api")
