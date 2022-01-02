@@ -38,7 +38,61 @@ import org.springframework.stereotype.Service;
 @Service
 @Transactional
 public class CinemaInitServiceImpl implements ICinemaInitService {
-	@Autowired
+
+	@Override
+	public void initVilles() {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void initCinemas() {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void initSalles() {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void initPlaces() {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void initSeances() {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void initCategories() {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void initFilms() {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void initProjections() {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void initTickets() {
+		// TODO Auto-generated method stub
+		
+	}
+/*	@Autowired
 	private VilleRepository villeRepository;
 	@Autowired
 	private CinemaRepository cinemaRepository;
@@ -50,13 +104,13 @@ public class CinemaInitServiceImpl implements ICinemaInitService {
 	private SeanceRepository seanceRepository;
 	@Autowired
 	private CategorieRepository categorieRepository;
-	@Autowired
-	private FilmRepository filmRepository;
+	
 	@Autowired
 	private ProjectionRepository projectionRepository;
 	@Autowired
 	private TicketRepository ticketRepository;
-
+	@Autowired
+	private FilmRepository filmRepository;
 	@Override
 	public void initVilles() {
 		Stream.of("BenArrous", "Tunis", "Bizerte", "Sousse", "Mahdia").forEach(nameVille -> {
@@ -194,47 +248,6 @@ public class CinemaInitServiceImpl implements ICinemaInitService {
 		});
 
 	}
-	
-	@Override
-	public Film saveMedecin(Film m) {
-		return filmRepository.save(m);
-	}
+*/
 
-	@Override
-	public Film updateMedecin(Film m) {
-		return filmRepository.save(m);
-	}
-
-	@Override
-	public void deleteMedecin(Film m) {
-		filmRepository.delete(m);
-
-	}
-
-	@Override
-	public void deleteMedecinById(Long id) {
-		filmRepository.deleteById(id);
-
-	}
-
-	@Override
-	public Film getMedecin(Long id) {
-		return filmRepository.findById(id).get();
-	}
-
-	@Override
-	public List<Film> getAllMedecin() {
-		return filmRepository.findAll();
-	}
-
-	@Override
-	public Page<Film> getAllmedecinPage(int page, int size) {
-		return  filmRepository.findAll(PageRequest.of(page, size));
-	}
-
-	@Override
-	public List<Film> findMedecinBySpecialite(String s) {
-		return filmRepository.findByScenaristeNomSc(s);
-		
-	}
 }

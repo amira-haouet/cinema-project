@@ -111,44 +111,7 @@ public class Film {
 	public void setCategorie(Categorie categorie) {
 		this.categorie = categorie;
 	}	
-	@Autowired
-	ICinemaInitService	filmService ;
 
-	@RequestMapping(method = RequestMethod.GET)
-	public List<Film> getAllMedecin() {
-		return filmService.getAllMedecin();
-	}
 
-	@RequestMapping(value = "/{id}", method = RequestMethod.GET)
-	public Film getMedecinById(@PathVariable("id") Long id) {
-		return filmService.getMedecin(id);
-	}
-
-	@RequestMapping(value = "/{id}", method = RequestMethod.DELETE)
-	public void deleteMedecinById(@PathVariable("id") Long id) {
-		filmService.deleteMedecinById(id);
-	}
-
-	@RequestMapping(method = RequestMethod.PUT)
-	public Film updateMedecin(@RequestBody Film m) {
-		return filmService.updateMedecin(m);
-	}
-
-	@RequestMapping(method = RequestMethod.POST)
-	public Film saveMedecin(@RequestBody Film m) {
-		return filmService.saveMedecin(m);
-	}
-
-	@GetMapping("/page")
-	public Page<Film> showPage(@RequestParam(name = "p", defaultValue = "0") int page) {
-		Page<Film> p = filmService.getAllmedecinPage(page, 3);
-		return p;
-	}
-
-	@RequestMapping(value = "/findSpec/{s}", method = RequestMethod.GET)
-	public List<Film> getBySpecialite(@PathVariable("s") String s) {
-		System.out.println(s);
-		return filmService.findMedecinBySpecialite(s);
-	}
 
 }

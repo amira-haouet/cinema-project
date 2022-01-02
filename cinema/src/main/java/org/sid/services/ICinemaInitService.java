@@ -17,14 +17,5 @@ public interface ICinemaInitService {
 	public void initProjections();
 	public void initTickets();
 	
-	Film saveMedecin(Film m);
-	Film updateMedecin(Film m);
-	void deleteMedecin(Film m);
-	void deleteMedecinById(Long id);
-	Film getMedecin(Long id);
-	List<Film> getAllMedecin();
-	
-	Page<Film>  getAllmedecinPage(int page , int size);
-	
-	List<Film> findMedecinBySpecialite(String s);
+
 }

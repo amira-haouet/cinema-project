@@ -38,11 +38,11 @@ export class CinemaService {
   }
 
   getMovie(page: number): Observable<any> {
-    return this.http.get("http://localhost:8000/project/movie/api/page?p=" + page)
+    return this.http.get("http://localhost:8000/movie/api/page?p=" + page)
 
   }
   getMovieById(id: number): Observable<any> {
-    return this.http.get("http://localhost:8000/project/movie/api/" + id);
+    return this.http.get("http://localhost:8000/movie/api/" + id);
 
   }
   getSpecialiteById(id: number): Observable<any> {
@@ -50,37 +50,37 @@ export class CinemaService {
 
   }
   addMovie(m): Observable<any> {
-    return this.http.post("http://localhost:8000/project/movie/api", m)
+    return this.http.post("http://localhost:8000/movie/api", m)
   }
 
   deleteMedecin(id: number): Observable<any> {
-    return this.http.delete("http://localhost:8000/project/movie/api/" + id)
+    return this.http.delete("http://localhost:8000/movie/api/" + id)
   }
   updateMedecin(m): Observable<any> {
-    return this.http.put("http://localhost:8000/project/movie/api", m)
+    return this.http.put("http://localhost:8000/movie/api", m)
   }
   getMedecinBySpecialite(s): Observable<any> {
-    return this.http.get("http://localhost:8000/project/movie/api/findSpec/" + s)
+    return this.http.get("http://localhost:8000/movie/api/findSpec/" + s)
   }
 
   getSpecialite(): Observable<any> {
-    return this.http.get("http://localhost:8000/project/scenariste/api")
+    return this.http.get("http://localhost:8000/scenariste/api")
 
   }
   getSpecialiteParPage(page: number): Observable<any> {
-    return this.http.get("http://localhost:8000/project/scenariste/api/page?p=" + page)
+    return this.http.get("http://localhost:8000/scenariste/api/page?p=" + page)
 
   }
 
   deleteSpecialite(id: number): Observable<any> {
-    return this.http.delete("http://localhost:8000/project/scenariste/api/" + id)
+    return this.http.delete("http://localhost:8000/scenariste/api/" + id)
   }
   updateSpecialite(s): Observable<any> {
-    return this.http.put("http://localhost:8000/project/scenariste/api", s)
+    return this.http.put("http://localhost:8000/scenariste/api", s)
   }
 
   addSpecialite(s): Observable<any> {
-    return this.http.post("http://localhost:8000/project/scenariste/api", s)
+    return this.http.post("http://localhost:8000/scenariste/api", s)
   }
 
   /* produitsRecherche: [];
