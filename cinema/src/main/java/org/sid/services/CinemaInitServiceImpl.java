@@ -29,7 +29,11 @@ import org.sid.entities.Seance;
 import org.sid.entities.Ticket;
 import org.sid.entities.Ville;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageRequest;
 import org.springframework.stereotype.Service;
+
+
 
 @Service
 @Transactional
@@ -190,5 +194,47 @@ public class CinemaInitServiceImpl implements ICinemaInitService {
 		});
 
 	}
+	
+	@Override
+	public Film saveMedecin(Film m) {
+		return filmRepository.save(m);
+	}
 
+	@Override
+	public Film updateMedecin(Film m) {
+		return filmRepository.save(m);
+	}
+
+	@Override
+	public void deleteMedecin(Film m) {
+		filmRepository.delete(m);
+
+	}
+
+	@Override
+	public void deleteMedecinById(Long id) {
+		filmRepository.deleteById(id);
+
+	}
+
+	@Override
+	public Film getMedecin(Long id) {
+		return filmRepository.findById(id).get();
+	}
+
+	@Override
+	public List<Film> getAllMedecin() {
+		return filmRepository.findAll();
+	}
+
+	@Override
+	public Page<Film> getAllmedecinPage(int page, int size) {
+		return  filmRepository.findAll(PageRequest.of(page, size));
+	}
+
+	@Override
+	public List<Film> findMedecinBySpecialite(String s) {
+		return filmRepository.findByScenaristeNomSc(s);
+		
+	}
 }
