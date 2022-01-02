@@ -1,0 +1,28 @@
+<navbar></navbar>
+
+<div style="margin-top:80px" class="container">
+  <form [formGroup]="addForm" (submit)="add()">
+    <div class="form-group">
+      <label for="exampleInputEmail1">Nom Scenariste</label>
+      <input type="text" class="form-control" formControlName="nom">
+      <small *ngIf='addForm.get("nom").touched && addForm.get("nom").hasError("required")'>nom Scenariste est
+        obligatoire</small>
+
+    </div>
+    <div class="form-group">
+      <label for="exampleInputEmail1">Prenom Scenariste</label>
+      <input type="text" class="form-control" formControlName="prenom">
+      <small *ngIf='addForm.get("prenom").touched && addForm.get("prenom").hasError("required")'>prenom Scenariste est
+        obligatoire</small>
+
+    </div>
+    <!-- 
+    <div class="form-group green-border-focus">
+      <label for="exampleFormControlTextarea5">Description</label>
+      <textarea class="form-control" id="exampleFormControlTextarea5" rows="3" formControlName="desc"></textarea>
+      <small *ngIf='addForm.get("desc").touched && addForm.get("desc").hasError("minlength")'>Taille minimale est 10
+        !</small>
+    </div>-->
+    <button [disabled]="!addForm.valid" type="submit" class="btn btn-primary mt-3">Ajouter</button>
+  </form>
+</div>

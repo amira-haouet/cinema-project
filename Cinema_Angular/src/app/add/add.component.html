@@ -1,0 +1,64 @@
+<navbar></navbar>
+<div style="margin-top:80px" class="container">
+  <form [formGroup]="addForm" (submit)="add()">
+    <div class="form-group">
+      <h1>Ajouter</h1>
+      <label for="exampleInputEmail1">titre</label>
+      <input type="text" class="form-control" formControlName="titre" ng-required="required">
+      <small *ngIf='addForm.get("titre").touched && addForm.get("titre").hasError("required")'>Titre est
+        obligatoire</small>
+      <small *ngIf='addForm.get("titre").touched && addForm.get("titre").hasError("pattern")'>titre ne doit pas contenir
+        des caractére speciaux </small>
+    </div>
+    <div class="form-group">
+      <label for="exampleInputEmail1">prix Ticket</label>
+      <input type="number" class="form-control" formControlName="prixTicket" ng-required="required">
+    </div>
+    <div class="form-group row">
+      <label for="example-date-input" class="col-2 col-form-label">Date Sortie</label>
+      <div class="col-10">
+        <input class="form-control" type="date" value="2021-12-30" id="example-date-input" formControlName="dateSortie"
+          ng-required="required">
+        <small *ngIf='addForm.get("dateSortie").touched && addForm.get("dateSortie").hasError("required")'>Date est
+          obligatoire</small>
+      </div>
+    </div>
+
+
+    <label for="">Genre :</label><br>
+    <div class="form-check form-check-inline">
+      <input class="form-check-input" type="radio" id="inlineCheckbox1" name="genre" value="Drama"
+        formControlName="genre">
+      <label class="form-check-label" for="inlineCheckbox1">Drama</label>
+    </div> &nbsp;
+    <div class="form-check form-check-inline">
+      <input class="form-check-input" type="radio" id="inlineCheckbox2" name="genre" value="Horror"
+        formControlName="genre">
+      <label class="form-check-label" for="inlineCheckbox2">Horror</label>
+    </div>
+    &nbsp;
+    <div class="form-check form-check-inline">
+      <input class="form-check-input" type="radio" id="inlineCheckbox2" name="genre" value="Comedy"
+        formControlName="genre">
+      <label class="form-check-label" for="inlineCheckbox2">Comedy</label>
+    </div>&nbsp;
+    <div class="form-check form-check-inline">
+      <input class="form-check-input" type="radio" id="inlineCheckbox2" name="genre" value="Fantasy "
+        formControlName="genre">
+      <label class="form-check-label" for="inlineCheckbox2">Fantasy </label>
+    </div>&nbsp;
+    <div class="form-check form-check-inline">
+      <input class="form-check-input" type="radio" id="inlineCheckbox2" name="genre" value="Mystery"
+        formControlName="genre">
+      <label class="form-check-label" for="inlineCheckbox2">Mystery</label>
+    </div><br>
+
+    <label class="mt-3" for="">nom Scenariste : </label>
+    <select class="form-control" formControlName="sc">
+      <option *ngFor='let sc of scenariste' value="{{sc.idSc}}"> {{sc.nomSc}}</option>
+    </select>
+    <button [disabled]='!addForm.valid' type="submit" class="btn btn-primary mt-3">Ajouter</button>
+
+
+  </form>
+</div>

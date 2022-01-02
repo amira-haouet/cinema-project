@@ -1,0 +1,59 @@
+<navbar></navbar>
+<section>
+  <div class="container mt-5">
+    <div class="card">
+      <div class="card-body">
+        <div class="d-flex flex-row">
+          <div class="p-2">
+            <h1 class="card-title">Spécialite</h1>
+          </div>
+        </div>
+
+        <div class="p-2"><button type="button" class="btn btn-success" routerLink="/scenariste/add">Ajouter</button>
+        </div>
+
+
+        <table class="table table-stripped">
+          <thead>
+            <th> </th>
+            <th>nom </th>
+            <th>prenom</th>
+            <th>Modifier</th>
+            <th>Supprimer</th>
+          </thead>
+          <tbody>
+            <tr *ngFor="let s of scenariste">
+              <td>{{s.idSc}}</td>
+              <td>{{s.nomSc}}</td>
+              <td>{{s.prenomSc}}</td>
+              <td><button type="button" class="btn btn-info" [routerLink]="['edit']"
+                  [queryParams]="{ id:s.idc}">Modifier</button></td>
+              <td><button type="button" (click)="delete(s.idSc)" class="btn btn-danger">Supprimer</button></td>
+            </tr>
+          </tbody>
+        </table>
+        <hr>
+
+        <nav aria-label="Page navigation example">
+          <ul class="pagination">
+            <li class="page-item">
+              <a class="page-link" href="#" aria-label="Previous">
+                <span aria-hidden="true">&laquo;</span>
+                <span class="sr-only">Previous</span>
+              </a>
+            </li>
+            <li *ngFor="let p of pages ; let i = index" class="page-item">
+              <a class="page-link" href="" (click)="setPage(i,$event)">{{i+1}}</a>
+            </li>
+            <li class="page-item">
+              <a class="page-link" href="#" aria-label="Next">
+                <span aria-hidden="true">&raquo;</span>
+                <span class="sr-only">Next</span>
+              </a>
+            </li>
+          </ul>
+        </nav>
+      </div>
+    </div>
+  </div>
+</section>

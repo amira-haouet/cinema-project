@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { CinemaService } from '../services/cinema.service';
+import { ApiService } from '../api.service';
 import { FormGroup, FormControl, FormBuilder } from '@angular/forms'
 @Component({
   selector: 'app-medecin',
@@ -8,8 +8,7 @@ import { FormGroup, FormControl, FormBuilder } from '@angular/forms'
 })
 export class MovieComponent implements OnInit {
   seachForm: FormGroup;
-  constructor(private _apiService: CinemaService, private formBuilder: FormBuilder, private apiservice: ApiService,
-) {
+  constructor(private _apiService: ApiService, private formBuilder: FormBuilder) {
     this.seachForm = formBuilder.group(
       {
         sc: new FormControl()
@@ -81,27 +80,5 @@ export class MovieComponent implements OnInit {
       }
     )
   }
-  titre: any;
-  searchtest() {
-    if (this.titre == "") {
-      this.ngOnInit();
 
-    }
-    else {
-      this.movies = this.movies.filter(
-
-        res => {
-          return res.titre.toLowerCase().match(this.titre.toLowerCase());
-        })
-    }
-  }
-
-
-  key: string = 'titre';
-  reverse: boolean = false;
-  sort(key) {
-    this.key = key;
-    this.reverse = !this.reverse;
-  }
-  //authService: AuthService;
 }

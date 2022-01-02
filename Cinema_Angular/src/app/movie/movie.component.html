@@ -1,5 +1,4 @@
-<p>movie works!</p>
-
+<navbar></navbar>
 <section>
   <div class="container mt-5">
     <div class="card ">
@@ -9,21 +8,13 @@
             <h1 class="card-title">Movies</h1>
           </div>
         </div>
-        <!--     <div class="p-2"><button type="button" class="btn btn-success" routerLink="/movie/add">Ajouter</button></div>-->
-
-
-        <!--search form-->
+        <div class="p-2"><button type="button" class="btn btn-success" routerLink="/movie/add">Ajouter</button></div>
         <div class="p-2">
           <form [formGroup]="seachForm" (submit)="search()" class="form-inline my-2 my-lg-0">
             <input class="form-control mr-sm-2" formControlName="sc" type="search"
               placeholder="Recherche par SCENARISTE" aria-label="Search">
             <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Chercher</button>
-
           </form>
-          <div class="p-2">
-
-          </div>
-
         </div>
         <!--     <div *ngIf="movies.length > 0 ; else pasVide  ">-->
 
@@ -31,7 +22,7 @@
           <table class="table table-stripped">
             <thead>
               <th></th>
-              <th (click)="sort('titre')">Titre <i class="fa fa-sort"></i></th>
+              <th>Titre</th>
               <th>Prix Ticket</th>
               <th>Scenariste</th>
               <th>Date de Sortie</th>
@@ -41,14 +32,7 @@
               <th>Plus de details</th>
             </thead>
             <tbody>
-              <tr>
-                <td colspan="8"> <input placeholder="Search MOVIE" class="form-control mr-sm-2" type="text" name="titre"
-                    [(ngModel)]="titre" (ngModelChange)="searchtest()"></td>
-
-
-
-              </tr>
-              <tr *ngFor="let m of movies ">
+              <tr *ngFor="let m of movies">
                 <td>{{m.idMovie}}</td>
                 <td>{{m.titre}}</td>
                 <td>{{m.prixTicket}}</td>
@@ -58,11 +42,9 @@
                 </ng-template>
                 <td>{{m.dateSortie}}</td>
                 <td>{{m.genre}}</td>
-
-                <!--*ngIf="authService.isAdmin()"-->
-                <td><button type="button" class="btn btn-info" [routerLink]="['edit']" 
-                    [queryParams]="{ id:m.idMovie}"   *ngIf="authService.isAdmin()">Modifier</button></td>
-                <td><button type="button" (click)="delete(m.idMovie)" class="btn btn-danger"  *ngIf="authService.isAdmin()">Supprimer</button></td>
+                <td><button type="button" class="btn btn-info" [routerLink]="['edit']"
+                    [queryParams]="{ id:m.idMovie}">Modifier</button></td>
+                <td><button type="button" (click)="delete(m.idMovie)" class="btn btn-danger">Supprimer</button></td>
 
                 <td><button class="btn btn-warning">Plus de details</button></td>
               </tr>

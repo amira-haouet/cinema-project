@@ -1,0 +1,45 @@
+<navbar></navbar>
+
+<div style="margin-top:80px" class="container">
+  <form [formGroup]="editForm" (submit)="edit()">
+
+    <div class="form-group">
+      <label for="exampleInputEmail1">Nom Scenariste</label>
+      <input type="text" class="form-control" [(ngModel)]="s.nomSc" formControlName="nomSc">
+      <small *ngIf='editForm.get("nomSc").touched && editForm.get("nomSc").hasError("required")'>nom Scenariste est
+        obligatoire</small>
+    </div>
+    
+    <div class="form-group">
+      <label for="exampleInputEmail1">Prenom Scenariste</label>
+      <input type="text" class="form-control" [(ngModel)]="s.prenomSc" formControlName="prenomSc">
+      <small *ngIf='editForm.get("prenomSc").touched && editForm.get("prenomSc").hasError("required")'>prenom Scenariste
+        est
+        obligatoire</small>
+
+    </div>
+
+    <button [disabled]="!editForm.valid" type="submit" class="btn btn-primary mt-3">Modifier</button>
+  </form>
+</div>
+
+    <!--
+  
+    <div class="form-group">
+      <label for="exampleInputEmail1">Specialite</label>
+      <input type="text" [(ngModel)]="s.nomSpec" class="form-control" formControlName="nom">
+      <small *ngIf='editForm.get("nom").touched && editForm.get("nom").hasError("required")'>Specialite est
+        obligatoire</small>
+
+    </div>
+
+    <div class="form-group green-border-focus">
+      <label for="exampleFormControlTextarea5">Description</label>
+      <textarea class="form-control" id="exampleFormControlTextarea5" rows="3" [(ngModel)]="s.description"
+        formControlName="desc"></textarea>
+      <small *ngIf='editForm.get("desc").touched && editForm.get("desc").hasError("minlength")'>Taille minimale est 10
+        !</small>
+    </div>
+-->
+
+
